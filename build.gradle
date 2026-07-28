@@ -1,0 +1,5 @@
+// Top-level build file
+plugins {
+    // Android derleme motorunun versiyonunu burada GitHub'a tanıtıyoruz
+    id 'com.android.application' version '8.3.1' apply false
+}
