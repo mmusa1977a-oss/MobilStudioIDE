@@ -2,20 +2,20 @@ name: Android CI (APK Derleyici)
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main" ] # Main dalına her kod yüklendiğinde çalışır
   pull_request:
     branches: [ "main" ]
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest # GitHub'ın bulut sunucusu
 
     steps:
-    # 1. Repodaki kodları sunucuya çek
+    # 1. Repodaki kodları sunucuya çek (En güncel v4 sürümü)
     - name: Kodları Çek
       uses: actions/checkout@v4
 
-    # 2. Java 17 ortamını kur (v4 sürümüne güncellendi)
+    # 2. Java 17 ortamını kur (v3'ten v4'e güncellendi)
     - name: JDK 17 Kurulumu
       uses: actions/setup-java@v4
       with:
@@ -23,15 +23,11 @@ jobs:
         distribution: 'temurin'
         cache: gradle
 
-    # 3. Gradle (Derleme motoru) için çalışma izni ver
-    - name: Gradle'a İzin Ver
-      run: chmod +x gradlew
-
-    # 4. Uygulamayı APK olarak derle
+    # 3. Uygulamayı APK olarak derle (gradlew HATA VERDİĞİ İÇİN direkt gradle komutu kullanıldı)
     - name: Debug APK Derle
-      run: ./gradlew assembleDebug
+      run: gradle assembleDebug
 
-    # 5. Çıkan APK dosyasını yükle (Hatanın çözüldüğü yer - v4'e güncellendi)
+    # 4. Çıkan APK dosyasını GitHub sayfasına indirme linki olarak koy (v3'ten v4'e güncellendi)
     - name: APK'yı Yükle
       uses: actions/upload-artifact@v4
       with:
