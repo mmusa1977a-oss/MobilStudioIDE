@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/editorRootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0D1117">
+
+    <LinearLayout
+        android:id="@+id/pathBar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#161B22"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <EditText
+            android:id="@+id/etFilePath"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="1"
+            android:background="#0D1117"
+            android:hint="app/src/main/res/layout/"
+            android:inputType="text"
+            android:paddingHorizontal="10dp"
+            android:textColor="#C9D1D9"
+            android:textColorHint="#484F58"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/pathBar"
+        android:fillViewport="true">
+
+        <EditText
+            android:id="@+id/etCode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:fontFamily="monospace"
+            android:gravity="top|start"
+            android:hint=""
+            android:inputType="textMultiLine|textNoSuggestions"
+            android:padding="16dp"
+            android:textColor="#E6EDF3"
+            android:textColorHint="#484F58"
+            android:textSize="14sp" />
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/floatingPreview"
+        android:layout_width="140dp"
+        android:layout_height="260dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp"
+        android:background="#30363D"
+        android:elevation="12dp"
+        android:orientation="vertical"
+        android:padding="4dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="14dp"
+            android:background="#000000"
+            android:gravity="center"
+            android:text="12:00 🔋"
+            android:textColor="#FFFFFF"
+            android:textSize="8sp" />
+
+        <FrameLayout
+            android:id="@+id/phoneCanvas"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="#FFFFFF" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="12dp"
+            android:background="#000000"
+            android:gravity="center"
+            android:text="◄   ●   ■"
+            android:textColor="#8B949E"
+            android:textSize="8sp" />
+    </LinearLayout>
+</RelativeLayout>
+
