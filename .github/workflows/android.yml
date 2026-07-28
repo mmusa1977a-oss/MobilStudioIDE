@@ -1,0 +1,39 @@
+name: Android CI (APK Derleyici)
+
+on:
+  push:
+    branches: [ "main" ] # Main dalına her kod yüklendiğinde çalışır
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest # GitHub'ın bulut sunucusu
+
+    steps:
+    # 1. Repodaki kodları sunucuya çek
+    - name: Kodları Çek
+      uses: actions/checkout@v4
+
+    # 2. Java 17 ortamını kur (Android için gerekli)
+    - name: JDK 17 Kurulumu
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        cache: gradle
+
+    # 3. Gradle (Derleme motoru) için çalışma izni ver
+    - name: Gradle'a İzin Ver
+      run: chmod +x gradlew
+
+    # 4. Uygulamayı APK olarak derle
+    - name: Debug APK Derle
+      run: ./gradlew assembleDebug
+
+    # 5. Çıkan APK dosyasını GitHub sayfasına indirme linki olarak koy
+    - name: APK'yı Yükle
+      uses: actions/upload-artifact@v3
+      with:
+        name: MobilStudio-APK
+        path: app/build/outputs/apk/debug/app-debug.apk
