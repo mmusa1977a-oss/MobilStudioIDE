@@ -20,12 +20,26 @@
             android:layout_height="36dp"
             android:layout_weight="1"
             android:background="#0D1117"
-            android:hint="app/src/main/res/layout/"
-            android:inputType="text"
+            android:hint="app/src/main/res/layout/activity_main.xml"
             android:paddingHorizontal="10dp"
             android:textColor="#C9D1D9"
             android:textColorHint="#484F58"
-            android:textSize="13sp" />
+            android:textSize="13sp"/>
+
+        <Button
+            android:id="@+id/btnOpen"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_marginStart="6dp"
+            android:text="Aç"/>
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_marginStart="6dp"
+            android:text="Kaydet"/>
+
     </LinearLayout>
 
     <ScrollView
@@ -41,20 +55,20 @@
             android:background="@null"
             android:fontFamily="monospace"
             android:gravity="top|start"
-            android:hint=""
             android:inputType="textMultiLine|textNoSuggestions"
+            android:minHeight="700dp"
             android:padding="16dp"
             android:textColor="#E6EDF3"
-            android:textColorHint="#484F58"
-            android:textSize="14sp" />
+            android:textSize="14sp"/>
+
     </ScrollView>
 
     <LinearLayout
         android:id="@+id/floatingPreview"
         android:layout_width="140dp"
         android:layout_height="260dp"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
         android:layout_margin="16dp"
         android:background="#30363D"
         android:elevation="12dp"
@@ -68,23 +82,24 @@
             android:gravity="center"
             android:text="12:00 🔋"
             android:textColor="#FFFFFF"
-            android:textSize="8sp" />
+            android:textSize="8sp"/>
 
         <FrameLayout
             android:id="@+id/phoneCanvas"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="#FFFFFF" />
+            android:background="#FFFFFF"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="12dp"
             android:background="#000000"
             android:gravity="center"
-            android:text="◄   ●   ■"
+            android:text="◄ ● ■"
             android:textColor="#8B949E"
-            android:textSize="8sp" />
-    </LinearLayout>
-</RelativeLayout>
+            android:textSize="8sp"/>
 
+    </LinearLayout>
+
+</RelativeLayout>
