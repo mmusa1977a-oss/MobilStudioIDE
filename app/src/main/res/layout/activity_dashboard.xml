@@ -31,8 +31,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:background="?android:selectableItemBackgroundBorderless"
-            android:src="@android:drawable/ic_menu_manage"
-            android:tint="#2563EB"/>
+            android:src="@android:drawable/ic_menu_manage"/>
     </LinearLayout>
 
     <!-- Arama -->
@@ -42,14 +41,10 @@
         android:layout_height="48dp"
         android:layout_below="@id/topBar"
         android:layout_margin="16dp"
-        android:background="@android:drawable/edit_text"
         android:hint="Proje Ara..."
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:textColor="#111827"
-        android:textColorHint="#9CA3AF"/>
+        android:padding="12dp"/>
 
-    <!-- Hızlı İşlemler -->
+    <!-- Butonlar -->
     <LinearLayout
         android:id="@+id/actionButtons"
         android:layout_width="match_parent"
@@ -62,7 +57,7 @@
         <Button
             android:id="@+id/btnNewProject"
             android:layout_width="0dp"
-            android:layout_height="50dp"
+            android:layout_height="48dp"
             android:layout_weight="1"
             android:text="Yeni Proje"/>
 
@@ -73,7 +68,7 @@
         <Button
             android:id="@+id/btnClone"
             android:layout_width="0dp"
-            android:layout_height="50dp"
+            android:layout_height="48dp"
             android:layout_weight="1"
             android:text="GitHub'dan Al"/>
     </LinearLayout>
@@ -85,24 +80,23 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/actionButtons"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="16dp"
         android:text="Projelerim"
-        android:textColor="#111827"
         android:textSize="18sp"
         android:textStyle="bold"/>
 
-    <!-- Proje Listesi -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvProjects"
+    <!-- ListView -->
+    <ListView
+        android:id="@+id/listProjects"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/txtProjects"
         android:layout_marginTop="8dp"
-        android:paddingStart="12dp"
-        android:paddingEnd="12dp"
-        android:paddingBottom="80dp"/>
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="90dp"/>
 
-    <!-- Yeni Proje FAB -->
+    <!-- FAB -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabNewProject"
         android:layout_width="wrap_content"
@@ -110,8 +104,6 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_margin="20dp"
-        app:backgroundTint="#2563EB"
-        app:srcCompat="@android:drawable/ic_input_add"
-        app:tint="#FFFFFF"/>
+        app:srcCompat="@android:drawable/ic_input_add"/>
 
 </RelativeLayout>
